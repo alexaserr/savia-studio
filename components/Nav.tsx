@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const links = [
   { label: "Servicios", href: "#servicios" },
@@ -30,13 +31,13 @@ export function Nav() {
       `}
     >
       {/* Wordmark */}
-      <a href="/" className="no-underline">
+      <Link href="/" className="no-underline">
         <img
           src="/images/logo/savia-amber.png"
           alt="Savia Studio"
           className="h-9 w-auto"
         />
-      </a>
+      </Link>
 
       {/* Links */}
       <div className="flex items-center gap-12">

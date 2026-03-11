@@ -34,7 +34,7 @@ const CHAKRA_DATA = [
 
 // ─── Sidebar ────────────────────────────────────────────────────────────────
 
-const Sidebar = ({ active, onNav }) => {
+const Sidebar = ({ active, onNav }: any) => {
   const items = [
     { id: "dashboard", label: "Dashboard"  },
     { id: "patients",  label: "Pacientes"  },
@@ -88,7 +88,7 @@ const Sidebar = ({ active, onNav }) => {
 
 // ─── TopBar ──────────────────────────────────────────────────────────────────
 
-const TopBar = ({ title }) => (
+const TopBar = ({ title }: any) => (
   <div style={{
     height: 48, background: "transparent",
     borderBottom: `1px solid ${C.border}`,
@@ -102,7 +102,7 @@ const TopBar = ({ title }) => (
 
 // ─── Dashboard ───────────────────────────────────────────────────────────────
 
-const MetricCard = ({ label, value, sub }) => (
+const MetricCard = ({ label, value, sub }: any) => (
   <div style={{
     background: C.card, borderRadius: 20, padding: "24px 24px 20px",
     boxShadow: cardShadow, fontFamily: font,
@@ -119,7 +119,7 @@ const MetricCard = ({ label, value, sub }) => (
   </div>
 );
 
-const DashboardScreen = ({ onNav }) => {
+const DashboardScreen = ({ onNav }: any) => {
   const patients = ["María Fernanda López", "Carlos Eduardo Ramírez", "Ana Gabriela Torres", "José Miguel Hernández", "Lucía Valentina Díaz"];
   const dates    = ["8 mar", "7 mar", "5 mar", "3 mar", "1 mar"];
   const [hovered, setHovered] = useState<number | null>(null);
@@ -198,7 +198,7 @@ const DashboardScreen = ({ onNav }) => {
 
 // ─── Patients ─────────────────────────────────────────────────────────────────
 
-const PatientsScreen = ({ onNav }) => {
+const PatientsScreen = ({ onNav }: any) => {
   const patients = [
     { name: "María Fernanda López",     sessions: 12, last: "8 mar 2026"   },
     { name: "Carlos Eduardo Ramírez",   sessions: 8,  last: "7 mar 2026"   },
@@ -295,7 +295,7 @@ const PatientsScreen = ({ onNav }) => {
 
 // ─── Patient Detail ───────────────────────────────────────────────────────────
 
-const PatientDetailScreen = ({ onNav }) => {
+const PatientDetailScreen = ({ onNav }: any) => {
   const [tab, setTab] = useState("personal");
   const sessions = [
     { date: "8 mar 2026",  type: "Sanación Energética", energy: 68, cost: "$1,500" },
@@ -418,7 +418,7 @@ const PatientDetailScreen = ({ onNav }) => {
 
 // ─── Wizard ───────────────────────────────────────────────────────────────────
 
-const WizardScreen = ({ onNav }) => {
+const WizardScreen = ({ onNav }: any) => {
   const [step, setStep] = useState(0);
   const steps = ["General", "Energía Inicial", "Chakras Inicial", "Temas", "Energía Final", "Chakras Final", "Cierre", "Resumen"];
 
@@ -694,7 +694,7 @@ const WizardScreen = ({ onNav }) => {
 
 // ─── Sessions placeholder ────────────────────────────────────────────────────
 
-const SessionsScreen = ({ onNav }) => (
+const SessionsScreen = ({ onNav }: any) => (
   <div style={{ padding: "28px", fontFamily: font }}>
     <div style={{ fontSize: 24, fontWeight: 200, color: C.text, letterSpacing: -0.5, marginBottom: 8 }}>Sesiones</div>
     <div style={{ fontSize: 13, color: C.textSecondary, marginBottom: 32 }}>Vista de todas las sesiones registradas</div>
