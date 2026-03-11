@@ -24,7 +24,7 @@ export function FinalCTA() {
     e.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("https://formspree.io/f/PLACEHOLDER", {
+      const res = await fetch("https://formspree.io/f/xdawgopd", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
