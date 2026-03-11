@@ -30,13 +30,12 @@ export function Nav() {
       `}
     >
       {/* Wordmark */}
-      <a href="/" className="flex items-baseline gap-2 no-underline">
-        <span className="font-display text-[28px] font-semibold text-amber tracking-tight">
-          Savia
-        </span>
-        <span className="font-body text-[10px] font-medium text-sage tracking-[4px] uppercase">
-          Studio
-        </span>
+      <a href="/" className="no-underline">
+        <img
+          src="/images/logo/savia-wordmark.svg"
+          alt="Savia Studio"
+          className="h-8 w-auto"
+        />
       </a>
 
       {/* Links */}

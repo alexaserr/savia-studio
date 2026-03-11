@@ -40,12 +40,11 @@ export function Hero() {
             transitionDelay: "0.2s",
           }}
         >
-          <span className="font-display text-[56px] font-semibold text-amber tracking-tight">
-            Savia
-          </span>
-          <span className="font-body text-[15px] font-light text-sage tracking-[7px] uppercase">
-            Studio
-          </span>
+          <img
+            src="/images/logo/savia-wordmark.svg"
+            alt="Savia Studio"
+            className="h-16 w-auto"
+          />
         </div>
 
         {/* Headline */}

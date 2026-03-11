@@ -2,13 +2,12 @@ export function Footer() {
   return (
     <footer className="bg-soft-black px-20 py-14 flex justify-between items-center flex-wrap gap-6">
       <div>
-        <div className="flex items-baseline gap-2 mb-2">
-          <span className="font-display text-[22px] font-semibold text-amber">
-            Savia
-          </span>
-          <span className="font-body text-[9px] font-medium text-sage tracking-[3px] uppercase">
-            Studio
-          </span>
+        <div className="mb-2">
+          <img
+            src="/images/logo/savia-wordmark.svg"
+            alt="Savia Studio"
+            className="h-7 w-auto"
+          />
         </div>
         <p className="font-body text-xs font-light text-warm-gray">
           Tecnología con cuidado artesanal
