@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { CaseStudyTabs } from "./case-study/CaseStudyTabs";
 
 const metrics = [
   { num: "60+", label: "Requerimientos" },
@@ -10,95 +11,68 @@ const metrics = [
   { num: "40", label: "Semanas de desarrollo" },
 ];
 
-const stack = ["Python", "FastAPI", "Next.js", "PostgreSQL", "Docker", "Tailscale"];
-
 export function CaseStudy() {
-  const [linkHovered, setLinkHovered] = useState(false);
+  const [showDemo, setShowDemo] = useState(false);
 
   return (
-    <section id="trabajo" className="relative bg-sand px-20 py-28">
-      {/* Decorative gradient */}
-      <div
-        className="absolute top-1/2 right-0 -translate-y-1/2 w-52 h-96 pointer-events-none"
-        style={{
-          background: "linear-gradient(to left, rgba(45,90,39,0.03), transparent)",
-        }}
-      />
+    <section id="trabajo" className="relative bg-cream px-20 py-24">
+      {/* Subtle separator */}
+      <div className="w-16 h-px bg-sand mx-auto mb-20" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-        {/* Left: text */}
-        <div>
-          <Reveal>
-            <span className="font-body text-[11px] font-semibold text-amber tracking-[4px] uppercase block mb-5">
-              Caso de estudio
-            </span>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <h2 className="font-display text-[clamp(28px,3.5vw,40px)] font-normal text-forest-dark leading-[1.15] mb-6">
-              Ecosistema digital para centro de sanación energética
-            </h2>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="font-body text-[15px] font-normal text-charcoal leading-[1.75] mb-9">
-              Plataforma completa con expediente clínico digital,
-              infraestructura self-hosted, cumplimiento NOM-004-SSA3-2012, y
-              documentación técnica exhaustiva. Entregado en 40 semanas.
-            </p>
-          </Reveal>
-          <Reveal delay={0.3}>
-            <a
-              href="#"
-              className="inline-flex items-center font-body text-sm font-semibold text-forest no-underline transition-all duration-300"
-              onMouseEnter={() => setLinkHovered(true)}
-              onMouseLeave={() => setLinkHovered(false)}
-              style={{
-                gap: linkHovered ? "14px" : "8px",
-                color: linkHovered ? "var(--amber)" : "var(--forest)",
-              }}
-            >
-              Ver caso completo
-              <span className="text-lg">→</span>
-            </a>
-          </Reveal>
-        </div>
+      <div className="max-w-6xl mx-auto text-center">
+        <Reveal>
+          <span className="font-body text-[11px] font-semibold text-amber tracking-[4px] uppercase block mb-5">
+            Caso de estudio
+          </span>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="font-display text-[clamp(28px,3.5vw,44px)] font-normal text-forest-dark leading-[1.15] mb-6 max-w-2xl mx-auto">
+            Ecosistema digital para centro de sanación energética
+          </h2>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="font-body text-[15px] font-normal text-warm-gray leading-[1.75] mb-12 max-w-lg mx-auto">
+            Plataforma clínica completa con cumplimiento NOM-004-SSA3-2012,
+            infraestructura self-hosted y documentación exhaustiva.
+            Entregado en 40 semanas.
+          </p>
+        </Reveal>
 
-        {/* Right: metrics card */}
-        <Reveal delay={0.2} direction="left">
-          <div className="relative overflow-hidden bg-forest-dark rounded-2xl px-11 py-14">
-            {/* Decorative circles */}
-            <div className="absolute -top-8 -right-8 w-36 h-36 rounded-full bg-amber/[0.06]" />
-            <div className="absolute -bottom-5 -left-5 w-20 h-20 rounded-full bg-sage/[0.05]" />
-
-            <div className="grid grid-cols-2 gap-9 mb-9 relative z-10">
-              {metrics.map((m, i) => (
-                <div key={i}>
-                  <div className="font-display text-[46px] font-normal text-amber leading-none mb-2">
-                    {m.num}
-                  </div>
-                  <div className="font-body text-[11px] font-medium text-sage-muted tracking-wide">
-                    {m.label}
-                  </div>
+        {/* Metrics */}
+        <Reveal delay={0.25}>
+          <div className="flex flex-wrap justify-center gap-12 mb-14">
+            {metrics.map((m, i) => (
+              <div key={i} className="text-center min-w-[100px]">
+                <div className="font-display text-5xl font-normal text-amber leading-none mb-2">
+                  {m.num}
                 </div>
-              ))}
-            </div>
-
-            <div className="relative z-10 pt-7 border-t border-sage/[0.12]">
-              <div className="font-body text-[10px] font-semibold text-sage tracking-[3px] uppercase mb-3">
-                Stack tecnológico
+                <div className="font-body text-xs text-warm-gray uppercase tracking-wider">
+                  {m.label}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="font-body text-[11px] font-medium text-sage-muted px-3 py-1.5 rounded-full border border-sage/[0.15] bg-sage/[0.05]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </Reveal>
+
+        <Reveal delay={0.3}>
+          <button
+            onClick={() => setShowDemo(!showDemo)}
+            className="inline-block font-body text-sm font-semibold text-cream bg-forest px-8 py-3 rounded-full no-underline tracking-wide hover:bg-forest-dark transition-all duration-700 cursor-pointer border-none"
+          >
+            {showDemo ? "Cerrar demo ×" : "Ver caso completo →"}
+          </button>
+        </Reveal>
+      </div>
+
+      {/* Interactive demo */}
+      <div
+        className={`transition-all duration-700 ease-out overflow-hidden ${
+          showDemo ? "max-h-[900px] opacity-100 mt-20" : "max-h-0 opacity-0 mt-0"
+        }`}
+      >
+        <div className="max-w-5xl mx-auto">
+          <CaseStudyTabs />
+        </div>
       </div>
     </section>
   );

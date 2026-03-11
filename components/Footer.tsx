@@ -4,9 +4,9 @@ export function Footer() {
       <div>
         <div className="mb-2">
           <img
-            src="/images/logo/savia-wordmark.svg"
+            src="/images/logo/savia-amber.png"
             alt="Savia Studio"
-            className="h-7 w-auto"
+            className="h-8 w-auto"
           />
         </div>
         <p className="font-body text-xs font-light text-warm-gray">

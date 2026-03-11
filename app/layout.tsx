@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   description:
     "Diseñamos y construimos ecosistemas digitales completos para clínicas, centros de bienestar y organizaciones de conocimiento en México.",
   metadataBase: new URL("https://saviastudio.io"),
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   openGraph: {
     title: "Savia Studio",
     description: "Tecnología con cuidado artesanal para salud y bienestar",
@@ -36,6 +40,7 @@ export const metadata: Metadata = {
     siteName: "Savia Studio",
     locale: "es_MX",
     type: "website",
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",

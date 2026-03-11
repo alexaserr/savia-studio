@@ -13,27 +13,11 @@ export function Hero() {
   const base = "transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]";
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-20 pt-28 pb-20 bg-forest-dark overflow-hidden grain">
-      {/* Atmospheric gradients */}
-      <div
-        className="absolute top-0 right-0 w-[55%] h-full pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 80% 40%, rgba(168,185,156,0.06) 0%, transparent 65%)",
-        }}
-      />
-      <div
-        className="absolute -bottom-[20%] -left-[10%] w-1/2 h-[60%] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 80%, rgba(196,132,29,0.04) 0%, transparent 60%)",
-        }}
-      />
-
-      <div className="relative z-10 max-w-[800px]">
+    <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-8 pt-40 pb-32 bg-forest-dark overflow-hidden">
+      <div className="relative z-10 max-w-[720px] mx-auto flex flex-col items-center">
         {/* Wordmark */}
         <div
-          className={`flex items-baseline gap-3 mb-14 ${base}`}
+          className={`mb-16 ${base}`}
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(20px)",
@@ -41,15 +25,15 @@ export function Hero() {
           }}
         >
           <img
-            src="/images/logo/savia-wordmark.svg"
+            src="/images/logo/savia-amber.png"
             alt="Savia Studio"
-            className="h-16 w-auto"
+            className="h-40 w-auto drop-shadow-[0_0_32px_rgba(196,132,29,0.18)]"
           />
         </div>
 
         {/* Headline */}
         <h1
-          className={`font-display text-[clamp(36px,5vw,58px)] font-normal text-cream leading-[1.12] mb-7 -tracking-[0.5px] ${base}`}
+          className={`font-display text-[clamp(40px,6vw,72px)] font-normal text-cream leading-[1.1] mb-8 -tracking-[0.5px] ${base}`}
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(30px)",
@@ -63,21 +47,20 @@ export function Hero() {
 
         {/* Subheadline */}
         <p
-          className={`font-body text-[clamp(15px,1.5vw,18px)] font-light text-sage-muted leading-[1.75] mb-14 max-w-[580px] ${base}`}
+          className={`font-body text-[clamp(15px,1.5vw,18px)] font-light text-sage-muted leading-[1.8] mb-14 max-w-[500px] mx-auto ${base}`}
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(30px)",
             transitionDelay: "0.6s",
           }}
         >
-          Diseñamos y construimos ecosistemas digitales completos para
-          clínicas, centros de bienestar y organizaciones de conocimiento en
-          México.
+          Ecosistemas digitales completos para clínicas, centros de bienestar
+          y organizaciones de conocimiento en México.
         </p>
 
         {/* CTAs */}
         <div
-          className={`flex gap-4 items-center flex-wrap ${base}`}
+          className={`flex gap-4 items-center justify-center flex-wrap ${base}`}
           style={{
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(30px)",
@@ -89,9 +72,9 @@ export function Hero() {
             className="
               font-body text-[13px] font-semibold
               text-forest-dark bg-amber
-              px-9 py-4 rounded-md no-underline tracking-wide
+              px-9 py-4 rounded-full no-underline tracking-wide
               hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(196,132,29,0.3)]
-              transition-all duration-400
+              transition-all duration-700
             "
           >
             Hablemos de su proyecto
@@ -101,46 +84,15 @@ export function Hero() {
             className="
               font-body text-[13px] font-medium
               text-sage border border-sage/25
-              px-7 py-4 rounded-md no-underline
+              px-7 py-4 rounded-full no-underline
               hover:border-sage hover:text-cream hover:-translate-y-0.5
-              transition-all duration-400
+              transition-all duration-700
             "
           >
             Ver nuestro trabajo →
           </a>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-10 left-20"
-        style={{
-          opacity: loaded ? 1 : 0,
-          transition: "opacity 1.5s ease 1.5s",
-        }}
-      >
-        <div
-          className="w-px h-14 mb-3 ml-1.5 animate-scroll-pulse"
-          style={{
-            background:
-              "linear-gradient(to bottom, var(--sage), transparent)",
-          }}
-        />
-        <span className="font-body text-[9px] text-warm-gray tracking-[3px] uppercase">
-          Scroll
-        </span>
-      </div>
-
-      {/* Decorative vertical line */}
-      <div
-        className="absolute right-20 top-1/2 -translate-y-1/2 w-px h-44"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, rgba(196,132,29,0.15), transparent)",
-          opacity: loaded ? 1 : 0,
-          transition: "opacity 2s ease 1s",
-        }}
-      />
     </section>
   );
 }
