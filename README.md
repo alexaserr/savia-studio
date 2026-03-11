@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Savia Studio — saviastudio.io
 
-## Getting Started
+Estudio de tecnología especializado en salud, bienestar y conocimiento.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 15 (App Router, TypeScript)
+- **Styling:** Tailwind CSS 3.4 + CSS variables
+- **Fonts:** Cormorant Garamond + Montserrat (swap for Kenao when ready)
+- **Deploy:** Vercel
+- **Animations:** Intersection Observer + CSS transitions
+
+## Setup rápido
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estructura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+  layout.tsx      ← Root layout, fonts, metadata
+  page.tsx        ← Homepage (assembles sections)
+  globals.css     ← Tailwind + brand CSS variables + animations
 
-## Learn More
+components/
+  Reveal.tsx      ← Scroll-triggered animation wrapper
+  Nav.tsx         ← Fixed nav with scroll-aware styling
+  Hero.tsx        ← Hero section with entrance animations
+  Services.tsx    ← Service cards with hover effects
+  CaseStudy.tsx   ← Case study with metrics
+  WhySavia.tsx    ← Differentiators
+  Process.tsx     ← 4-step process
+  FinalCTA.tsx    ← Call to action
+  Footer.tsx      ← Footer
 
-To learn more about Next.js, take a look at the following resources:
+lib/
+  useInView.ts    ← Intersection Observer hook
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] **Semana 1:** Homepage + Contacto → ya puedes enviar link a prospectos
+- [ ] **Semana 2:** Servicios + Caso de estudio completo
+- [ ] **Semana 3:** Nosotros + versiones en inglés (next-intl)
+- [ ] Swap Cormorant Garamond por Kenao Sans Serif
+- [ ] Formulario de contacto (Resend / Formspree)
+- [ ] SEO: og:image, hreflang, schema markup
+- [ ] Performance: Lighthouse 90+
 
-## Deploy on Vercel
+## Brand tokens
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Los colores y tipografías están definidos en:
+- `tailwind.config.ts` → para clases de Tailwind
+- `app/globals.css` → como CSS variables (:root)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Referencia completa: ver `brand-guide-savia-studio.docx`
